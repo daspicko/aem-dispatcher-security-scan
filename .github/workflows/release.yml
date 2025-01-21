@@ -21,11 +21,12 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ vars.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          registry: ${{ vars.DOCKER_REGISTRY || 'docker.io' }}
+          username: ${{ vars.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_TOKEN }}
       
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ format('{0}/aem-dispatcher-scanner:latest', vars.DOCKERHUB_USERNAME) }}
+          tags: ${{ format('{0}/aem-dispatcher-scanner:latest', vars.DOCKER_USERNAME) }}
