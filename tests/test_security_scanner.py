@@ -74,7 +74,7 @@ class TestSecurityScanner(unittest.TestCase):
         '''
         scanner = SecurityScanner()
         
-        self.assertEqual(scanner.request_timeout, 1)
+        self.assertEqual(scanner.request_timeout, 10)
 
     def test_request_timeout_none(self):
         '''
@@ -84,7 +84,7 @@ class TestSecurityScanner(unittest.TestCase):
         '''
         scanner = SecurityScanner(request_timeout=None)
         
-        self.assertEqual(scanner.request_timeout, 1)
+        self.assertEqual(scanner.request_timeout, 10)
 
     def test_request_timeout_custom(self):
         '''
