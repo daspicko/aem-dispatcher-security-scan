@@ -26,7 +26,7 @@ class SecurityScanner():
         '''
         self.host = 'http://localhost:8080' if host is None else host
         self.page_path = '/content/geometrixx/en' if page_path is None else page_path
-        self.request_timeout = 1 if request_timeout is None else request_timeout
+        self.request_timeout = 10 if request_timeout is None else request_timeout
         self.paths = self.load_paths('aem-sec-paths.txt' if resource_path is None else resource_path)
 
     def print_configuration(self):
