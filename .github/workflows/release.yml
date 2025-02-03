@@ -29,6 +29,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: 
-            ${{ format('{0}/aem-dispatcher-scanner:latest', vars.DOCKER_USERNAME) }}
+          tags: |
+            ${{ format('{0}/aem-dispatcher-scanner:latest', vars.DOCKER_USERNAME) }} 
             ${{ format('{0}/aem-dispatcher-scanner:{1}', vars.DOCKER_USERNAME, github.event.release.tag_name) }}
